@@ -27,12 +27,4 @@ pipeline {
             }
         }
     }
-    post {
-        failure {
-            emailext body: "The SonarQube quality check failed. Please see the attached logs for more information.",
-                     subject: "SonarQube Quality Check Failed",
-                     to: "krishnasharma2910.ks@gmail.com",
-                     attachmentsPattern: "**/target/sonar/log/*.log"
-        }
-    }
 }
